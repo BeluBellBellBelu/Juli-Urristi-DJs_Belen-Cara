@@ -9,15 +9,12 @@
         opacity: 1;
     }
 }
-
-
 /*Selector Universal*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 /*medidas*/
 html{
     font-size: 20px;
@@ -28,44 +25,44 @@ body {
     font-family: 'Hind', sans-serif;
 }
 
+
 /*Navegacion*/
-
-.navbar-collapse{
-    padding-left: 50px;
-}
-
 .barraNavegacion{
     position: sticky;
     top: 0;
+    z-index: 50;
+}
+
+.navbar{
+    color: black;
+    font-size: 25px;
+}
+
+.nav-item{
+    padding: 0 20px;
 }
 
 /*Cabecera index*/
 h1{
+    font-size: 90px;
     text-align: center;
-    font-size: 80px;
     color: rgb(255, 255, 255);
     animation-name: tituloprincipal;
     animation-duration: 3s;
 }
 
 .backgroundJuli{
-    background-image:url('../assets/img/juli_cabina_led.jpeg');
+    background-image:url('../assets/background/juli_cabina-home.jpg');
     background-size: cover;
     background-position: center;
-    padding: 350px;
 }
 
 .aboutUs__container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 80px;
+    padding: 80px 0;
     background-color: antiquewhite;
-}
-
-.aboutUs__text{
-    width: 40%;
-    padding-top: 40px;
 }
 
 .aboutUs__title{
@@ -74,31 +71,20 @@ h1{
 
 .aboutUs__text--content{
     line-height: 25px;
-    padding: 20px 50px 50px 50px;
     text-align: center;
 }
 
 .aboutUs__img{
-    width: 500px;
-    left: 300px;
+    max-width: 80%;
     border-radius: 20px;
-    border-style: outset;
 }
 
 /*Main index*/
-#indexMain{
-    padding: 80px 300px;
-}
 
-#indexMain section{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
 
 .mainTitle{
     text-align: center;
-    padding-bottom: 50px;
+    margin: 10px 0;
     font-weight: bold;
     font-size: 30px;
 }
@@ -125,6 +111,7 @@ h1{
 .videoYoutube{
     width: 600px;
     height: 340px;
+    max-width: 90%;
 }
 
 /*Seccion DJs*/
@@ -197,11 +184,15 @@ h1{
     background-image:url('../assets/background/pioneer.JPG');
     background-size: cover;
     background-position: center;
-    padding: 300px;
+    height: 80vh;
+}
+
+.backgroundServicios h1{
+    height: 80vh;
 }
 
 .sectionServicios{
-    margin: 30px;
+    padding: 30px;
 }
 
 .tituloServicios{
@@ -301,53 +292,6 @@ i {
 /***MEDIA QUERIES***/
 @media only screen and (max-width: 576px) {
 
-/*Cabecera index*/
-h1{
-    font-size: 50px;
-    letter-spacing: 2px;
-}
-
-.backgroundJuli{
-    padding: 100px;
-}
-
-.aboutUs__container{
-    padding: 10px;
-}
-
-.aboutUs__text{
-    width: 80%;
-}
-
-.aboutUs__text--content{
-    padding: 20px 5px 5px 5px;
-}
-
-.aboutUs__img{
-    width: 400px;
-}
-
-/*Main index*/
-#indexMain{
-    padding: 60px 0px;
-}
-
-.mainTitle{
-    padding-bottom: 50px;
-    font-size: 25px;
-}
-
-.listas{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding-top: 20px;
-}
-
-.videoYoutube{
-    width: 500px;
-    height: 315px;
-}
-
 /*Seccion DJs*/
 .djs-container{
     padding: 10px;
@@ -363,12 +307,6 @@ h1{
 
 .djs-tarjeta p{
     font-size: 20px;
-}
-
-
-/*Servicios*/
-.backgroundServicios{
-    padding: 100px;
 }
 
 

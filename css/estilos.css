@@ -269,10 +269,7 @@ main legend{
 }
 
 /*Pie de pagina*/
-#footer{
-    display: grid;
-    justify-items: center;
-    width: 100%;
+footer{
     background-image: linear-gradient(to right, black, rgb(41, 37, 37), rgb(168, 168, 168));
     color:rgb(255, 255, 255);
     padding: 20px 20px;

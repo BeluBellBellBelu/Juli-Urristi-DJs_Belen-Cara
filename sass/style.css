@@ -1,169 +1,219 @@
 /*Variables*/
 /*Mixins*/
-/*estilos*/
 /*Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap");
 /*animaciones*/
+@-webkit-keyframes tituloprincipal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes tituloprincipal {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 /*Selector Universal*/
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /*medidas*/
 html {
   font-size: 20px;
-  font-family: "Hind", sans-serif; }
+  font-family: "Hind", sans-serif;
+}
 
 body {
-  font-family: "Hind", sans-serif; }
+  font-family: "Hind", sans-serif;
+}
 
 /*Navegacion*/
 .barraNavegacion {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 50; }
+  z-index: 50;
+}
 
 .navbar {
   color: #000000;
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 .nav-item {
-  padding: 0 20px; }
+  padding: 0 20px;
+}
 
 /*Cabecera index*/
 h1 {
   font-size: 90px;
   text-align: center;
   color: #ffffff;
-  animation-name: tituloprincipal;
-  animation-duration: 3s; }
+  -webkit-animation-name: tituloprincipal;
+          animation-name: tituloprincipal;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
 
 .backgroundJuli {
   background-image: url("../assets/background/juli_cabina-home.jpg");
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+}
 
 .aboutUs__container {
   flex-wrap: wrap;
   padding: 80px 0;
-  background-color: #faebd7; }
+  background-color: #faebd7;
+}
 
 .aboutUs__title {
-  text-align: center; }
+  text-align: center;
+}
 
 .aboutUs__text--content {
   line-height: 25px;
-  text-align: center; }
+  text-align: center;
+}
 
 .aboutUs__img {
   max-width: 80%;
-  border-radius: 20px; }
+  border-radius: 20px;
+}
 
 /*Main index*/
 .mainTitle {
   text-align: center;
   margin: 10px 0;
   font-weight: bold;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 .tipoEventos {
   text-decoration: underline;
-  font-size: 23px; }
+  font-size: 23px;
+}
 
 .listOrder {
   margin-left: -40px;
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 .listaSocial {
   padding-bottom: 20px;
-  line-height: 25px; }
+  line-height: 25px;
+}
 
 .listaCorpo {
-  line-height: 25px; }
+  line-height: 25px;
+}
 
 .videoYoutube {
   width: 600px;
   height: 340px;
-  max-width: 90%; }
+  max-width: 90%;
+}
 
 /*Seccion DJs*/
-.djs-container, .descripcion-container {
+.djs-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 50px; }
+  padding: 50px;
+}
 
 .fotoDj {
   width: 300px;
   height: 300px;
-  transition: all 1s; }
-  .fotoDj:hover {
-    width: 350px;
-    height: 350px;
-    padding: 10px; }
+  transition: all 1s;
+}
+.fotoDj:hover {
+  width: 350px;
+  height: 350px;
+  padding: 10px;
+}
 
 .djs-title {
   text-align: center;
   font-size: 40px;
-  padding: 50px 0 20px 0; }
+  padding: 50px 0 20px 0;
+}
 
 .djs-tarjeta {
-  padding: 10px 30px; }
+  padding: 10px 30px;
+}
 
 .djs-tarjeta h3 {
   text-align: center;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 .djs-tarjeta p {
   text-align: center;
-  font-size: 22px; }
+  font-size: 22px;
+}
 
 .descripcion-container {
   background-color: #837A75;
-  padding: 50px 0px; }
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+}
 
 .descripcion {
   width: 70%;
-  text-align: center; }
+  text-align: center;
+}
 
 /*Seccion Fotos*/
 #galeria .col-lg-4 {
-  padding: 10px; }
+  padding: 10px;
+}
 
 #galeria {
-  padding-bottom: 50px; }
-  #galeria img {
-    width: 100%;
-    height: 260px; }
-    #galeria img:hover {
-      border: 6px solid #f7f7f7; }
+  padding-bottom: 50px;
+}
+#galeria img {
+  width: 100%;
+  height: 260px;
+}
+#galeria img:hover {
+  border: 6px solid #f7f7f7;
+}
 
 /*Servicios*/
 .backgroundServicios {
   background-image: url("../assets/background/pioneer.JPG");
   background-position: center;
   background-size: cover;
-  height: 80vh; }
+  height: 80vh;
+}
 
 .backgroundServicios h1 {
-  height: 80vh; }
+  height: 80vh;
+}
 
 .sectionServicios {
-  padding: 30px; }
+  padding: 30px;
+}
 
 .tituloServicios {
   text-align: center;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+}
 
 .listaServicios li {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 /*Contacto*/
 .contenido {
@@ -171,71 +221,88 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  color: #ffffff; }
+  color: #fff;
+}
 
 .contenedor-contact {
-  box-shadow: 0 0 20px 0 #00000056; }
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.337254902);
+}
 
 .formulario-contact {
-  background-color: #222222; }
-  .formulario-contact form {
-    display: grid;
-    grid-template-columns: 100%; }
-    .formulario-contact form p {
-      margin: 0px;
-      padding: 3px; }
+  background-color: #222222;
+}
+.formulario-contact form {
+  display: grid;
+  grid-template-columns: 100%;
+}
+.formulario-contact form p {
+  margin: 0px;
+  padding: 3px;
+}
 
 .contenedor-contact > * {
-  padding: 1em; }
+  padding: 1em;
+}
 
 main legend {
   padding: 0 10px;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 .formulario-contact form button,
 .formulario-contact form input {
-  padding: .5em;
+  padding: 0.5em;
   border: none;
   background: none;
   outline: 0;
   border-bottom: 1px solid #ffffff;
   width: 100%;
-  color: #ffffff; }
+  color: #ffffff;
+}
 
 .formulario-contact form textarea {
   width: 100%;
   height: 20%;
-  padding: .5em;
+  padding: 0.5em;
   border: none;
   background: none;
   outline: 0;
   border-bottom: 1px solid #ffffff;
   color: #ffffff;
-  transition: all 2s; }
+  transition: all 2s;
+}
 
 .formulario-contact form textarea:focus {
-  height: 100%; }
+  height: 100%;
+}
 
 /*Pie de pagina*/
 footer {
   background-image: linear-gradient(to right, #000000, #292525, #a8a8a8);
   color: #ffffff;
-  padding: 20px 20px; }
+  padding: 20px 20px;
+}
 
 i {
   font-size: 2.2rem;
   color: #ffffff;
   letter-spacing: 10px;
-  text-align: center; }
+  text-align: center;
+}
 
 /***MEDIA QUERIES***/
 @media only screen and (max-width: 576px) {
   /*Seccion DJs*/
-  .djs-container, .descripcion-container {
-    padding: 10px; }
+  .djs-container {
+    padding: 10px;
+  }
   .fotoDj {
-    width: 200px; }
+    width: 200px;
+  }
   .djs-tarjeta h3 {
-    font-size: 25px; }
+    font-size: 25px;
+  }
   .djs-tarjeta p {
-    font-size: 20px; } }
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */

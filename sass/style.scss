@@ -38,7 +38,7 @@ $estilos: (
 }
 /*medidas*/
 html{
-    font-size: 20px;
+    font-size: 23px;
     font-family: $font-principal;
 }
 
@@ -70,6 +70,7 @@ h1{
     color: map-get($estilos, blanco);
     animation-name: tituloprincipal;
     animation-duration: 3s;
+    padding: 300px 0;
 }
 
 .backgroundJuli{
@@ -108,8 +109,8 @@ h1{
 }
 
 .tipoEventos{
-    text-decoration: underline;
-    font-size: 23px;
+    font-size: 30px;
+    line-height: 50px;
 }
 
 .listOrder{
@@ -169,7 +170,7 @@ h1{
 }
 
 .descripcion-container{
-    background-color: #837A75;
+    background: rgba(0,0,0,0.4);
     padding: 50px 0px;
     @extend .djs-container;
 }
@@ -198,11 +199,6 @@ h1{
 .backgroundServicios{
     background-image:url('../assets/background/pioneer.JPG');
     @include fondo(center, cover);
-    height: 80vh;
-}
-
-.backgroundServicios h1{
-    height: 80vh;
 }
 
 .sectionServicios{
@@ -255,14 +251,15 @@ main legend{
 
 .formulario-contact form button,
 .formulario-contact form input{
+    width: 100%;
     padding: .5em;
     border: none;
     background: none;
     outline: 0;
     border-bottom: $border-blanco-solid;
-    width: 100%;
     color: #ffffff;
 }
+
 
 .formulario-contact form textarea{
     @include sizes(100%, 20%);
@@ -300,13 +297,29 @@ i {
 /***MEDIA QUERIES***/
 @media only screen and (max-width: 576px) {
 
+h1{
+    padding: 200px 0;
+    font-size: 70px;
+}     
+
 /*Seccion DJs*/
 .djs-container{
-    padding: 10px;
+    padding: 2px;
+    width: 100%;
 }
 
 .fotoDj{
     width: 200px;
+    height: 200px;
+}
+
+.fotoDj:hover{
+    width: 240px;
+    height: 240px;
+}
+
+.djs-tarjeta{
+    padding: 10px 2px;
 }
 
 .djs-tarjeta h3{
@@ -316,8 +329,6 @@ i {
 .djs-tarjeta p{
     font-size: 20px;
 }
-
-
 
 }
 

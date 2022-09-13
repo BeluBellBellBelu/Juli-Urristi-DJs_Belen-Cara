@@ -137,7 +137,7 @@ h1{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 25px;
 }
 
 .fotoDj{
@@ -151,7 +151,7 @@ h1{
 
 .djs-title{
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     padding: 50px 0 20px 0;
 }
 
@@ -161,7 +161,8 @@ h1{
 
 .djs-tarjeta h3{
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
+    margin-top: 10px;
 }
 
 .djs-tarjeta p{
@@ -170,14 +171,15 @@ h1{
 }
 
 .descripcion-container{
-    background: rgba(0,0,0,0.4);
-    padding: 50px 0px;
+    margin-bottom: 60px;
     @extend .djs-container;
+    background-image: linear-gradient(to bottom, #b3a6cc, #a2c5ba);
 }
 
 .descripcion{
     width: 70%;
     text-align: center;
+    font-size: 28px;
 }
 
 /*Seccion Fotos*/
@@ -217,7 +219,7 @@ h1{
 
 /*Contacto*/
 .contenido{
-    max-width: 700px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
@@ -244,15 +246,10 @@ h1{
     padding: 1em;
 }
 
-main legend{
-    padding: 0 10px;
-    font-size: 30px;
-}
-
 .formulario-contact form button,
 .formulario-contact form input{
     width: 100%;
-    padding: .5em;
+    padding: .7em;
     border: none;
     background: none;
     outline: 0;
@@ -260,9 +257,8 @@ main legend{
     color: #ffffff;
 }
 
-
 .formulario-contact form textarea{
-    @include sizes(100%, 20%);
+    @include sizes(100%, 50%);
     padding: .5em;
     border: none;
     background: none;

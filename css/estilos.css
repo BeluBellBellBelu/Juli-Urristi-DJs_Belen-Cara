@@ -220,14 +220,17 @@ footer {
 i {
   font-size: 2.2rem;
   color: #ffffff;
-  letter-spacing: 10px;
-  text-align: center; }
+  letter-spacing: 30px;
+  text-align: center;
+  display: block; }
 
 /***MEDIA QUERIES***/
 @media only screen and (max-width: 576px) {
   h1 {
     padding: 200px 0;
     font-size: 70px; }
+  i {
+    font-size: 1.8rem; }
   /*Seccion DJs*/
   .djs-container, .descripcion-container {
     padding: 2px;

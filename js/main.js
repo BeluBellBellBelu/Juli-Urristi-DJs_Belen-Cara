@@ -1,103 +1,101 @@
-//objetos
 
+//objetos y array
 const evento1 = {tipo:"Boda", precio: 80000};
 const evento2 = {tipo:"15 años", precio: 50000};
 const evento3 = {tipo:"Cumpleaños", precio: 25000};
-const evento4 = {tipo:"otro festejo"};
+const evento4 = {tipo:"otro festejo", precio: 20000};
 
 const nroInv1 = {nro:"50/80 invitados", precio2: 25000};
 const nroInv2 = {nro:"100/150 invitados", precio2: 60000};
 const nroInv3 = {nro:"200/250 invitados", precio2: 80000};
 const nroInv4 = {nro:"mas de 250 invitados", precio2: 130000};
 
-//Array
 
-otrosServicios=[{nombre:"bautismo", realizamos: "si"}, {nombre:"comunion", realizamos: "si"}, {nombre:"bar mitzvah", realizamos: "si"}, {nombre:"bat mitzvah", realizamos: "si"}, {nombre:"corporativos", realizamos: "si"}, {nombre:"empresariales", realizamos: "si"}, {nombre:"cocktail", realizamos: "si"}, {nombre:"despedidas", realizamos: "si"}, {nombre:"egresados", realizamos: "si"}, {nombre:"infantiles", realizamos: "si"}, {nombre:"pool party", realizamos: "si"}, {nombre:"eventos en el exterior", realizamos: "no"}, {nombre:"alquiler de equipos", realizamos: "no"}, {nombre:"karaoke", realizamos: "no"}, {nombre:"animacion", realizamos: "no"}];
+otrosServicios=[{nombre:"bautismo", realizamos: "si"}, {nombre:"comunion", realizamos: "si"}, {nombre:"bar mitzvah", realizamos: "si"}, {nombre:"bat mitzvah", realizamos: "si"}, {nombre:"corporativos", realizamos: "si"}, {nombre:"empresariales", realizamos: "si"}, {nombre:"cocktail", realizamos: "si"}, {nombre:"despedidas", realizamos: "si"}, {nombre:"egresados", realizamos: "si"}, {nombre:"infantiles", realizamos: "si"}, {nombre:"pool party", realizamos: "si"}, {nombre:"eventos fuera del pais", realizamos: "no"}, {nombre:"alquiler de equipos", realizamos: "no"}, {nombre:"karaoke", realizamos: "no"}, {nombre:"animacion", realizamos: "no"}];
 
-//Funciones
-function saludo(nombre) {
-    alert(nombre + " para presupuestar tu evento necesitamos saber:")
-};
 
+const eventos = document.getElementById("opcionesEvento"), invitados = document.getElementById("opcionesInvitados"), infoEnvio = document.getElementById('formulario'), finalMessage = document.getElementsByClassName('mensajeFinal'), infoName = document.getElementById("infoName"), emailInfo = document.getElementById("infoMail"), inputBusqueda = document.getElementById("inputSearch"), btnBusqueda = document.getElementById("btnSearch");
+
+var opcion1;
 var opcion2;
 
-function infoInvitados() {
-    opcion2 = prompt("Selecciona cantidad de invitados: \n1-50-80 \n2-100-150 \n3-200-250 \n4-+250");
-                if (opcion2 < "5" && opcion2 > "0") {
-                    prompt("Ingresa tu email para poder contactarte:");
-                } else {
-                    alert("volve a intentar");
-                }
+//inputs con options
+eventos.addEventListener('change',() => {
+    console.log("cambio de opcion");
+    opcion1 = eventos.options[eventos.selectedIndex].value;
+});
+
+invitados.addEventListener('change',() => {
+    console.log("cambio de opcion");
+    opcion2 = invitados.options[invitados.selectedIndex].value;
+});
+
+
+//funciones tipo evento y cantidad de inv
+function precioEventos(opcion1){
+    if(opcion1 == 'Boda'){
+        return evento1;
+    } else if (opcion1 == '15 años'){
+        return evento2;
+    } else if (opcion1 == 'Cumpleaños'){
+        return evento3;
+    } else {
+        return evento4;
+    }
 };
 
-function cantidadInvitados(opcion2){
-    if(opcion2 == "1"){
+function precioInvitados(opcion2){
+    if(opcion2 == '50/80'){
         return nroInv1;
-    } else if (opcion2 == "2"){
+    } else if (opcion2 == '100/150'){
         return nroInv2;
-    } else if (opcion2 == "3"){
+    } else if (opcion2 == '200/250'){
         return nroInv3;
     } else {
         return nroInv4;
     }
 };
 
-function mensajeFinal(tipoEvento){
-    alert("Gracias! La opcion que elegiste es " + tipoEvento.tipo + " para " + cantidadInvitados(opcion2).nro + ", con un valor aprox de $" + (tipoEvento.precio + cantidadInvitados(opcion2).precio2) + ". Te enviaremos el presupuesto lo mas pronto posible. Si te equivocaste en alguna opcion o necesitas cotizar otro evento volve a realizar el cuestionario o elegi la opcion SALIR");
+//funcion segun las opciones que elija el usuario al enviar + guardado de info
+function infoFinal(){
+    if(opcion1 == 'default' || opcion2 == 'default' || infoName.value == "" || emailInfo.value == "") {
+        finalMessage[0].innerText = "Elegi una opcion y/o completa todos los campos";
+    } else {
+        finalMessage[0].innerText = "Gracias! La opcion que elegiste es " + opcion1 + " para una cantidad de " + opcion2 + " invitados aprox." + ", con un valor aprox de $" + (precioEventos(opcion1).precio + precioInvitados(opcion2).precio2 + ". Nos contactaremos lo mas pronto posible.");
+    }
 };
 
-function otrosServicios(nombre, realizamos){
-    this.nombre=nombre;
-    this.realizamos=realizamos;
+function aGuardar(){
+    let cliente = { nombre: infoName.value, mail: emailInfo.value};
+        localStorage.setItem("datos", JSON.stringify(cliente));
+
+        const evJSON = JSON.stringify(opcion1);
+            sessionStorage.setItem('evento', evJSON);
+        const invJSON = JSON.stringify(opcion2);
+            sessionStorage.setItem('invitados', invJSON);
 };
 
-function filtrarEvento(arr, filtro){
+
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+    infoFinal();
+    aGuardar();
+});
+
+
+//seccion busqueda
+function filtrarServicio(arr, filtro){
     const filtrado = arr.filter((servicio)=>{
         return servicio.nombre.includes(filtro);
     })
     return filtrado;
 };
 
+btnBusqueda.addEventListener('click', () =>{
+    let resultado = filtrarServicio(otrosServicios, inputBusqueda.value.toLowerCase())
+    finalMessage[1].innerHTML = `
+    <p>Resultado: ${resultado[0].nombre}</p>
+    <p>Lo realizamos?: ${resultado[0].realizamos}</p>`
+});
 
-//Pedido de nombre
-let nombre = prompt(
-    "Hola, ingresa tu nombre");
 
-saludo(nombre);
-
-
-//Cuestionario
-let opcion = prompt(
-    "Selecciona la opcion que corresponde a tu evento: \n1- Boda \n2-15 Años \n3-Cumpleaños \n4-Otro festejo \n\nPara SALIR seleciona 5");
-
-    while (opcion != "5") {
-        switch (opcion) {
-            case "1":
-                infoInvitados();
-                mensajeFinal(evento1);
-                break;
-            case "2":
-                infoInvitados();
-                mensajeFinal(evento2);
-                break;
-            case "3":
-                infoInvitados();
-                mensajeFinal(evento3);
-                break;
-            case "4":
-                infoInvitados();
-                alert("Gracias! La opcion que elegiste es " + evento4.tipo + " para " + cantidadInvitados(opcion2).nro + ". Nos pondremos en contacto contigo lo mas pronto posible para saber mas sobre tu evento y asi poder enviarte el presupuesto. Si te equivocaste en alguna opcion o necesitas cotizar otro evento volve a realizar el cuestionario o elegi la opcion SALIR");
-                break;
-    
-
-    default:
-        alert("ingresa una opcion correcta")
-        break;
-            }
-            opcion = prompt(
-                "Selecciona la opcion correcta: \n1- Boda \n2-15 Años \n3-Cumpleaños \n4-Otro festejo \n\nPara SALIR seleciona 5");           
-};
-
-let dato=prompt("Queres saber si realizamos algun otro servicio?? Ingresa la opcion que necesites");
-
-console.log(filtrarEvento(otrosServicios, dato));

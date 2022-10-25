@@ -42,6 +42,44 @@
         </nav>
     </div>
 
+    <main>
+        <form id="formulario" action="">
+        <div>
+            <h5>Que evento vas a realizar?</h5>
+            <select name="" id="opcionesEvento">
+                <option value="default">Elegi una opcion</option>
+                <option value="Boda">Boda</option>
+                <option value="15 años">15 años</option>
+                <option value="Cumpleaños">Cumpleaños</option>
+                <option value="Otro">Otro festejo</option>
+            </select>
+        </div>
+        <div>
+            <h5>Cuantos invitados aprox van a asistir a tu evento?</h5>
+            <select name="" id="opcionesInvitados">
+                <option value="default">Elegi una opcion</option>
+                <option value="50/80">50/80</option>
+                <option value="100/150">100/150</option>
+                <option value="200/250">200/250</option>
+                <option value="mas de 250">mas de 250</option>
+            </select>
+        </div>
+            <h5>Dejanos tu nombre y tu email para poder enviarte el presupuesto</h5>
+            <input id="infoName" type="text" placeholder="Nombre">
+            <input type="email" name="" id="infoMail" placeholder="Email">
+            <input type="submit" value="Enviar">
+        </form>
+        <p class="mensajeFinal"> Pasanos toda la info y nosotros luego te contactaremos! </p>
+        <br>
+        <section>
+            <h5>Queres saber si realizamos algun otro servicio? Podes buscar aqui</h5>
+            <input type="text" id="inputSearch" />
+            <button id="btnSearch">Buscar</button>
+            <p class="mensajeFinal"> buscando... </p>
+        </section>
+
+    </main>
+
     <footer class="container-fluid">
         <div class="row">
             <section class="d-flex align-items-center flex-wrap ps-sm-4 ps-lg-5">

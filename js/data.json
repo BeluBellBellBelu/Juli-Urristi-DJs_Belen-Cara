@@ -1,0 +1,62 @@
+[
+    {
+        "nombre":"bautismo",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"comunion",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"bar mitzvah",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"bat mitzvah",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"corporativos",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"empresariales",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"cocktail",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"despedidas",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"egresados",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"infantiles",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"pool party",
+        "realizamos":"si"
+    },
+    {
+        "nombre":"eventos fuera del pais",
+        "realizamos":"no"
+    },
+    {
+        "nombre":"alquiler de equipos",
+        "realizamos":"no"
+    },
+    {
+        "nombre":"karaoke",
+        "realizamos":"no"
+    },
+    {
+        "nombre":"animacion",
+        "realizamos":"no"
+    }
+]
